@@ -2,5 +2,11 @@
     "stm32-for-vscode.openOCDPath": "C:\\Opt\\openocd\\v0.12.0\\bin\\openocd.EXE",
     "stm32-for-vscode.armToolchainPath": "C:\\Program Files (x86)\\Arm GNU Toolchain arm-none-eabi\\14.3 rel1\\bin",
     "cortex-debug.gdbPath": "C:/gcc-arm-none-eabi/bin/arm-none-eabi-gdb",
-    "cortex-debug.openocdPath": "C:\\Opt\\openocd\\v0.12.0\\bin\\openocd.EXE"
+    "cortex-debug.openocdPath": "C:\\Opt\\openocd\\v0.12.0\\bin\\openocd.EXE",
+    "files.associations": {
+        "i2c.h": "c",
+        "adxl345.h": "c",
+        "stm32f1xx_hal.h": "c",
+        "stm32f1xx_hal_conf.h": "c"
+    }
 }
