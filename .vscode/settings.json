@@ -1,0 +1,4 @@
+{
+    "stm32-for-vscode.openOCDPath": "C:\\Opt\\openocd\\v0.12.0\\bin\\openocd.EXE",
+    "stm32-for-vscode.armToolchainPath": "C:\\Program Files (x86)\\Arm GNU Toolchain arm-none-eabi\\14.3 rel1\\bin"
+}
