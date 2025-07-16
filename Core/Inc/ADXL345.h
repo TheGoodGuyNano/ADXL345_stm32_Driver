@@ -9,6 +9,13 @@ ADXL345.h
 
 #include "stm32f1xx_hal.h"
 
+#define SIZE_REGISTER_READ      0x01U       /*Size to read with i2c function*/
+#define INDEX_ACC               0x03U       /*Axis X,Y,Z*/
+#define INDEX_X                 0x00U       /*X*/
+#define INDEX_Y                 0x01U       /*Y*/
+#define INDEX_Z                 0x02U       /*Z*/
+#define DEVID_NOT_MATCH         0xFFU       /*return value in case that DEVID does not match*/
+
 #define ADXL345_Address         (0x1DU<<1)  /*Main address*/
 #define ADXL345_Address_alt     (0x53U<<1)  /*Alternative address 2do device*/
 
@@ -70,4 +77,35 @@ uint8_t ADXL345_Init (st_ADXL345 *dev, I2C_HandleTypeDef *i2cHandler);
 HAL_StatusTypeDef ADXL345_ReadAccelerations(st_ADXL345 *dev);
 
 
+/**
+  * @brief  Read the content of a register ADXL345 Device with i2c
+  * @param  dev: Uses the handler for the i2c
+  * @param  reg: Register to be read
+  * @param  data: Data read 
+  * @retval HAL_StatusTypeDef
+  */
+HAL_StatusTypeDef ADXL345_ReadRegister (st_ADXL345 *dev, uint8_t reg, uint8_t *data);
+
+
+/**
+  * @brief  Read the content of registers from ADXL345 Device with i2c
+  * @param  dev: Uses the handler for the i2c
+  * @param  reg: Register to be read
+  * @param  data: Data read 
+  * @param  length: Lenght of the amount of data to be read
+  * @retval HAL_StatusTypeDef
+  */
+HAL_StatusTypeDef ADXL345_ReadRegisters (st_ADXL345 *dev, uint8_t reg, uint8_t *data, uint8_t length);
+
+
+/**
+  * @brief  Write data to a register of ADXL345 Device with i2c
+  * @param  dev: Uses the handler for the i2c
+  * @param  reg: Register to be writen
+  * @param  data: Data to be writen
+  * @retval HAL_StatusTypeDef
+  */
+HAL_StatusTypeDef ADXL345_WriteRegister (st_ADXL345 *dev, uint8_t reg, uint8_t *data);
+
 #endif /*ADXL345_H*/
+
